@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.Tienda</groupId>
+    <artifactId>Tienda</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>MatiasBarrantes</name>
+    <description>TechShop - Desarrollo de Aplicaciones Web SC403</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>21</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Spring MVC + Tomcat embebido -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Motor de plantillas Thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- DevTools (recarga automática en desarrollo) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Pruebas -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Bootstrap 5 -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>5.3.7</version>
+        </dependency>
+
+        <!-- Font Awesome (íconos) -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+        <!-- jQuery -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+
+        <!-- Popper.js (requerido por Bootstrap para dropdowns) -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>popper.js</artifactId>
+            <version>2.11.7</version>
+        </dependency>
+
+        <!-- WebJars Locator (detecta versiones automáticamente) -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+            <version>0.52</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>app</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
