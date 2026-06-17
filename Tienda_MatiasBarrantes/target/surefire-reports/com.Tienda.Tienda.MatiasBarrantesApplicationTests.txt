@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.Tienda.Tienda.MatiasBarrantesApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.084 s -- in com.Tienda.Tienda.MatiasBarrantesApplicationTests
