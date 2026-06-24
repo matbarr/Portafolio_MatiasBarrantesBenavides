@@ -6,17 +6,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-
-    <!-- Reemplaza el <head> con el fragmento "head" de fragmentos.html -->
-    <head th:replace="~{general/fragmentos :: head}"/>
-
-    <body>
-        <!-- Reemplaza el <header> con el fragmento "header" -->
-        <header th:replace="~{general/fragmentos :: header}"/>
-
-        <!-- Contenido propio de esta página -->
-
-        <!-- Reemplaza el <footer> con el fragmento "footer" -->
-        <footer th:replace="~{general/fragmentos :: footer}"/>
-    </body>
-</html>
+    <!DOCTYPE html>
+    <!-- Esta es la página principal del sitio web TechShop -->
+    <html>
+        <head th:replace="~{general/fragmentos :: head}"/>
+        <body>
+            <header th:replace="~{general/fragmentos :: header}"/>
+            <section th:replace="~{consultas/fragmentos :: tabs}"/>
+             <section th:replace="~{consultas/fragmentos :: tarjetas}"/>
+            <footer th:replace="~{general/fragmentos :: footer}"/>
+        </body>
+    </html>
