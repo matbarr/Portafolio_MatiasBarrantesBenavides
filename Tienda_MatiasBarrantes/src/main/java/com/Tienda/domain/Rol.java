@@ -4,10 +4,27 @@
  */
 package com.Tienda.domain;
 
-/**
- *
- * @author matib
- */
-public class Rol {
-    
+import jakarta.persistence.*;
+import java.io.Serializable;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "rol")
+public class Rol implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol")
+    private Integer idRol;
+
+    @Column(name = "rol", unique = true, length = 25)
+    private String rol;
+
+    public String getRol() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

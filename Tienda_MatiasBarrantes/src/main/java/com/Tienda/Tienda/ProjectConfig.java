@@ -30,6 +30,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/iframes").setViewName("iframes");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
+         registry.addViewController("/acceso_denegado").setViewName("acceso_denegado");
     }
 
     /* Configuración del resolver de plantillas Thymeleaf */
