@@ -6,9 +6,7 @@ package com.Tienda.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "ruta")
 public class Ruta implements Serializable {
@@ -26,11 +24,15 @@ public class Ruta implements Serializable {
     @JoinColumn(name = "id_rol")
     private Rol rol;
 
-    public Object getRol() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public Integer getIdRuta() { return idRuta; }
+    public void setIdRuta(Integer idRuta) { this.idRuta = idRuta; }
 
-    public boolean isRequiereRol() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public String getRuta() { return ruta; }
+    public void setRuta(String ruta) { this.ruta = ruta; }
+
+    public boolean isRequiereRol() { return requiereRol; }
+    public void setRequiereRol(boolean requiereRol) { this.requiereRol = requiereRol; }
+
+    public Rol getRol() { return rol; }
+    public void setRol(Rol rol) { this.rol = rol; }
 }

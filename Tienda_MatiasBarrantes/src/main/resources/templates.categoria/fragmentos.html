@@ -46,11 +46,42 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                            class='form-control'/>
                                     <img id='blah' src='#' alt='imagen de categoría' height="200"/></div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fa-solid fa-xmark"></i> [[#{accion.cerrar}]]</button>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa-solid fa-floppy-disk"></i> [[#{accion.guardar}]]</button>
+                            <button class="btn btn-primary" sec:authorize="hasRole('ROLE_ADMIN')"
+                                    data-bs-toggle="modal" data-bs-target="#modalCategoria">
+                                <i class="fas fa-plus"></i> Agregar Categoría
+                            </button>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>[[#{categoria.descripcion}]]</th>
+                                        <th>[[#{categoria.imagen}]]</th>
+                                        <th>[[#{categoria.activo}]]</th>
+                                        <th sec:authorize="hasRole('ROLE_ADMIN')"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="c : ${categorias}">
+                                        <td>[[${c.idCategoria}]]</td>
+                                        <td>[[${c.descripcion}]]</td>
+                                        <td><img th:src="@{${c.rutaImagen}}" alt="noData" height="75"/></td>
+                                        <td th:text="${c.activo} ? 'Activa':'Inactiva'"></td>
+                                        <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                            <div class="d-flex align-items-start">
+                                                <button type="button" class="btn btn-danger"
+                                                        data-bs-toggle="modal" data-bs-target="#confirmModal"
+                                                        th:attr="data-id=${c.idCategoria}">
+                                                    <i class="fas fa-trash"></i> Eliminar
+                                                </button>
+                                                <button type="button" class="btn btn-warning ms-1">
+                                                    <i class="fas fa-pen"></i> Actualizar
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
                         </form>
                     </div>
