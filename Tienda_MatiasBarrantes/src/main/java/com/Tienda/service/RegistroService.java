@@ -1,6 +1,6 @@
 package com.tienda.service;
 
-import com.tienda.domain.Usuario;
+import com.Tienda.domain.Usuario;
 import jakarta.mail.MessagingException;
 import java.util.Locale;
 import java.util.Optional;
